@@ -1,0 +1,52 @@
+#title {
+    font-family: helvetica;
+    text-align: center;
+    font-weight: normal;
+    font-size: 30px;
+    text-decoration: underline;
+
+}
+body{background-image:url(http://oi47.tinypic.com/2u8fhmx.jpg);}
+
+#navbar{border-style:dotted;
+border-width:2px;
+color: black;
+width:750px;
+margin:0 auto;
+ list-style:none;
+    }
+
+#navbar li{ display:inline-block;}
+
+#navbar a{ font-family:sans-serif;
+    z-index:2;
+}
+a:link {color:black;}
+a:visted {color: purple;}
+
+
+.margins{margin:auto;margin-left:50px;
+    font-family:sans-serif;
+    font-size:21px;
+    float:right;
+}
+h2 {
+    font-family: monospace;
+    text-align: center;
+    font-size:25px;
+}
+p {
+    font-size: 18px;
+    font-family: sans-serif;
+    width:-50%;
+}
+#foodface{ position:absolute;
+           top:30px;
+           width:225px;
+           margin-left:1px;
+}
+#fairy{position:absolute;
+       top:30px;
+       right:1px;
+    margin-right:1p;
+}

@@ -1,0 +1,27 @@
+body{background-image:url(http://oi47.tinypic.com/2u8fhmx.jpg);}
+.html{color:rgb(30,30,134);
+    font-size:27px;}
+p{padding-left:250px;
+    padding-right:300px;
+}
+.hi {padding-left:200;
+    
+}
+#htmlpic{position:absolute;
+         top:170px;}
+#css{
+    position:absolute;
+    top:150px;
+    right:0px;
+}
+#tags{position:absolute;
+     padding-left:500px;
+     padding-bottom:900px;}
+     
+#att{position:relative;
+padding-left:500px;}
+
+#fairy{position:absolute;
+top:-24px;
+right:0px;}
+

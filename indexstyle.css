@@ -1,0 +1,21 @@
+
+h3 {
+    font-family: sans-serif;
+}
+body {
+    background-color: rgb(211, 226, 242)
+}
+p {
+    width: 50%;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+#tree{
+    position: absolute;
+    top: 200px;
+    left: 900px;
+    width: 350px;
+}
+h3, body, p, img {
+    padding-left: 20px;}
+    

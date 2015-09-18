@@ -1,0 +1,33 @@
+body{background-color:rgb(211,226,242)}
+p {
+    font-size: 18px;
+    font-family: sans-serif;
+    padding-left:400px;
+    padding-right:60px;
+}
+#sharpei{position:absolute;
+    width:350px;
+    padding-left:20px;}
+
+#foodface{ position:absolute;
+           top:30px;
+           width:200px;
+           padding-left:20px;
+}
+#edward{ position:absolute;
+         bottom:-30px;
+         width:250px;
+         padding-left:300px;}
+         
+#couch {position:absolute;
+        bottom:-30px;
+        width:250px;}
+#dog-girl{position:absolute;
+         bottom:-30px;
+         width:250px;
+         padding-left:1000px;}
+#yoga{position:absolute;
+      bottom:-30px;
+      width:250px;
+      padding-left:700px;}
+#yoga, #couch, #edward, #foodface {margin-bottom:12p;}
