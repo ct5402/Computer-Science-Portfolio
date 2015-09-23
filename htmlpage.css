@@ -11,17 +11,20 @@ p{padding-left:250px;
          top:170px;}
 #css{
     position:absolute;
-    top:150px;
+    top:170px;
     right:0px;
 }
 #tags{position:absolute;
      padding-left:500px;
      padding-bottom:900px;}
      
-#att{position:relative;
-padding-left:500px;}
+#att{position:absolute;
+right:0px;
+    bottom:-100px;
+}
 
 #fairy{position:absolute;
 top:-24px;
 right:0px;}
+.tags-ok{color:rgb(146,80,138);}
 

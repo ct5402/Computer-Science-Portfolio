@@ -4,11 +4,16 @@
     font-weight: normal;
     font-size: 30px;
     text-decoration: underline;
+    transition:2s all linear;
 
 }
+#title:hover{
+    font-size:50px;}
+
 body{background-image:url(http://oi47.tinypic.com/2u8fhmx.jpg);}
 
 #navbar{border-style:dotted;
+border-radius:25px;
 border-width:2px;
 color: black;
 width:750px;
@@ -48,5 +53,5 @@ p {
 #fairy{position:absolute;
        top:30px;
        right:1px;
-    margin-right:1p;
+    margin-right:1px;
 }

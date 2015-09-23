@@ -1,5 +1,74 @@
-body{background-color:rgb(211,226,242)}
-#fairy{position:absolute;
-top:20px;
-right:0px;}
-       
+body {
+    background-color: rgb(211, 226, 242)
+}
+
+#fairy {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+}
+
+#mother {
+    position: absolute;
+    left: 200px;
+}
+
+#cpu {
+    position: absolute;
+    left: 50px;
+    bottom: -450px;
+}
+
+#drive {
+    position: absolute;
+    bottom: -230px;
+    right: 0px;
+    margin-right: 10px;
+}
+
+#motherp {
+    position: absolute;
+    width: 400px;
+    right: 0px;
+    top: 390px;
+}
+
+#cpuheader {
+    position: absolute;
+    left: 150px;
+    text-align: left;
+    bottom: -300px;
+    margin-left: 20px;
+}
+
+#cputext {
+    position: absolute;
+    left: 50px;
+    width: 300px;
+    bottom: -700px;
+}
+
+#motherparts {
+    position: absolute;
+    bottom: -250px;
+    text-align: center;
+    left: 500px;
+}
+
+#ram {
+    position: absolute;
+    left: 500px;
+    bottom: -300px;
+    margin-left: 20px;
+}
+
+#ramdiv{left: 500px;
+   margin-left: 20px;
+    bottom: -300px;}
+
+#ramp{position:absolute;
+    width:300px;
+    bottom:-700px;
+    left:500px;
+
+    
