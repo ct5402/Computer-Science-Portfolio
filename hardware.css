@@ -2,12 +2,6 @@ body {
     background-color: rgb(211, 226, 242)
 }
 
-#fairy {
-    position: absolute;
-    top: 20px;
-    right: 0px;
-}
-
 #mother {
     position: absolute;
     left: 200px;
@@ -62,13 +56,106 @@ body {
     margin-left: 20px;
 }
 
-#ramdiv{left: 500px;
-   margin-left: 20px;
-    bottom: -300px;}
+#ramdiv {
+    left: 500px;
+    margin-left: 20px;
+    bottom: -300px;
+}
 
-#ramp{position:absolute;
-    width:300px;
-    bottom:-700px;
-    left:500px;
+#ramp {
+    position: absolute;
+    width: 300px;
+    bottom: -700px;
+    left: 500px;
+}
 
-    
+#rampic {
+    position: absolute;
+    left: 500px;
+    bottom: -450px;
+}
+
+#harddrivediv {
+    position: absolute;
+    bottom: -300px;
+    left: 900px;
+}
+
+#hardrive {
+    top: 700px;
+}
+
+#harddrivep {
+    position: absolute;
+    width: 300px;
+    bottom: -450px;
+}
+
+#harddrivepic {
+    position: absolute;
+    left: 10px;
+    bottom: -130px;
+}
+
+#mkm {
+    position: absolute;
+    bottom: -900px;
+    left: 500px;
+}
+
+#monitorh {
+    position: absolute;
+    bottom: -1000px;
+    margin-left: 30px;
+}
+
+#monitorpic {
+    position: absolute;
+    bottom: -1140px;
+    left: 200px;
+}
+
+#monitortext {
+    position: absolute;
+    bottom: -1120px;
+    width: 260px;
+    left: 420px;
+}
+
+#keyboardh {
+    position: absolute;
+    bottom: -1000px;
+    margin-left: 700px;
+}
+
+#keyboardpic {
+    position: absolute;
+    bottom: -1120px;
+    left: 840px;
+}
+
+#keyboardtext {
+    position: absolute;
+    width: 260px;
+    bottom: -1150px;
+    left: 1051px;
+}
+
+#mouseh {
+    position: absolute;
+    bottom: -1300px;
+    margin-left: 30px;
+}
+
+#mousepic {
+    position: absolute;
+    bottom: -1400px;
+    left: 170px;
+}
+
+#mousetext {
+    position: absolute;
+    width: 260px;
+    left: 450px;
+    bottom: -1400px;
+}
