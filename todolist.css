@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(225, 197, 240);
+}
+h1 {
+    text-align:center;
+    text-decoration:underline;
+}
+#myform {
+    text-align:center;
+}
+#todolist {
+    text-align:center;
+}
+.border {
+    border-style:solid;
+    
+}
