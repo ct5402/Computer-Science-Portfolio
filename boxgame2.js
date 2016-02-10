@@ -44,7 +44,7 @@ function Rectangle(x, y) {
     this.height = 10;
     this.draw = function() {
         ctx2.beginPath();
-        ctx2.fillStyle = "red";
+        ctx2.fillStyle = "#FF99F3";
         ctx2.fillRect(this.xPos, this.yPos, this.width, this.height);
     };
 }

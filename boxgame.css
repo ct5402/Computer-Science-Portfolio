@@ -2,11 +2,14 @@ h1 {
     font-family:serif;
 }
 #mycanvas2{
-    background-color: #D2E6BC;
+    background-color: white;
     margin-left:120px;
 }
 #mycanvas {
-    background-color:#F7DD92;
+    background-color:white;
     margin-left:60px;
     margin-top:50px;
+}
+body{
+    background-color:#EFE6F2;
 }

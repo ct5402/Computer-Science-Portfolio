@@ -29,7 +29,7 @@ var box = {
         if (box.goDown && box.yPos < 480) {
             box.yPos += 5;
         }
-
+        
     },
     //Draws the small box
     draw: function() {
@@ -45,7 +45,7 @@ function Rectangle(x, y) {
     this.height = 10;
     this.draw = function() {
         ctx.beginPath();
-        ctx.fillStyle = "blue";
+        ctx.fillStyle = "#99CAFF";
         ctx.fillRect(this.xPos, this.yPos, this.width, this.height);
     };
 }
