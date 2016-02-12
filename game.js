@@ -279,12 +279,12 @@ function gameLoop() {
     else {
         ik = false;
     }
-     //Message from character
-        totalk(char, pj, 640, 240, "If only", "it was", "summer.");
     if (char.position === "insidethef") {
         pj.draw();
         iH.draw();
         fdinside.draw();
+         //Message from character
+        totalk(char, pj, 640, 240, "If only", "it was", "summer.");
         //What draws the box inside the house and teleports the character 
         if (ik) {
             entering();
