@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Me</title>
+        <link rel="stylesheet" type="text/css" href="vindinium.css">
+         <link rel="stylesheet" type="text/css" href="nav-bar.css">
+        
+    </head>
+    <body>
+         <h1 id="title"> Chloe's Website</h1>
+     <ul id="navbar">
+            <li><a href="index.html" class= "margins"> Intro Page</a></li>
+            <li><a href="aboutme.html" class="margins">About Me</a></li>
+            <li><a href="htmlpage.html" class="margins"> HTML </a></li>
+            <li><a href="hardware.html" class="margins">About Hardware</a></li>
+            <li><a href= "otherprojects.html" class= "margins"> Other Projects</a></li>
+            <li><a href= "vindinium.html" class= "margins"> Vindinium</a></li>
+            
+        </ul>
+        <h2> Vindinium </h2>
+        <h3>What is Vindinium?</h3>
+        <p>Vindinium is a game where people program their own bots. 
+        The goal of the game is to have the most gold, gold is collected by having mines. 
+        You compete against 3 other bots also programmed by someone. The tavern is used to recharge health, 
+        the mines are guarded by goblins and are where the gold comes from.
+        If you kill another player you automatically take control of their mines. 
+        You can endlessly be respawned however each time you will start out with 0 mines.
+        <h3>My Code</h3>
+        <pre>var Bot = require('bot');
+var PF = require('pathfinding');
+//var bot = new Bot('ja54o4lf', 'training', 'http://vindinium.org'); //Put your bot's code here and change training to Arena when you want to fight others.
+var bot = new Bot('8e5qs47g', 'arena', 'http://52.53.211.7:9000'); //Put your bot's code here and change training to Arena when you want to fight others.
+var goDir;
+var Promise = require('bluebird');
+Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+        //////* Write your bot below Here *//////
+        //////* Set `myDir` in the direction you want to go and then bot.goDir is set to myDir at the bottom *////////
+
+        /*                                      *
+         * This Code is global data!            *
+         *                                      */
+
+        // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is "none"
+        var myDir;
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+
+        // 
+        if (bot.data.game.turn < 5) {
+            bot.drink = false;
+            if (bot.drink === true) {
+                task = "lowhealth"
+            }
+        }
+
+
+        var enemyBots = [];
+        if (bot.yourBot.id != 1) enemyBots.push(bot.bot1);
+        if (bot.yourBot.id != 2) enemyBots.push(bot.bot2);
+        if (bot.yourBot.id != 3) enemyBots.push(bot.bot3);
+        if (bot.yourBot.id != 4) enemyBots.push(bot.bot4);
+
+
+        /*                                      *
+         * This Code Decides WHAT to do         *
+         *  This determines what task to do
+         */
+
+        // Allows the bot to double drink
+        var task = "tavern";
+        if (bot.drink) {
+            task = "lowHealth"
+            bot.drink = false;
+        }
+        else if (bot.yourBot.life < 49) {
+            bot.drink = true;
+            task = "lowHealth"
+                // The bot will attack when its health is between 50 and 80     
+        }
+        else if (bot.yourBot.life > 50 && bot.yourBot.life < 80) {
+            task = "attack";
+        }
+        else {
+            task = "freemines";
+        }
+        /*                                      *
+         * This Code Determines HOW to do it    *
+         *                                      */
+        // Will attack the player with the most mines
+        if (task === "attack") {
+            var mostMinesBot = enemyBots[0];
+            for (var i = 0; i < enemyBots.length; i++) {
+                if (mostMinesBot.mineCount < enemyBots[i].mineCount) {
+                    mostMinesBot.mineCount = bot.enemyBots[i];
+                }
+            }
+            console.log("attacking player");
+            myDir = bot.findPath(myPos, mostMinesBot.posArray);
+        }
+        // Shows the bot which tavern to go to.
+        if (task === "lowHealth") {
+            var closestTav = bot.taverns[0];
+            for (var i = 0; i < bot.taverns.length; i++) {
+                if (bot.findDistance(myPos, closestTav) > bot.findDistance(myPos, bot.taverns[i])) {
+                    closestTav = bot.taverns[i];
+                }
+            }
+            console.log("Going to the tavern.");
+            myDir = bot.findPath(myPos, closestTav);
+        }
+        // This Code find the nearest freemine and sets myDir toward that direction //
+        if (task === "freemines") {
+            var closestMine = bot.freeMines[0];
+            for (i = 0; i < bot.freeMines.length; i++) {
+                if (bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                    closestMine = bot.freeMines[i];
+                }
+            }
+            console.log("Claiming a Free Mine!");
+            myDir = bot.findPath(myPos, closestMine);
+        }
+        /*                                                                                                                              *
+         * This Code Sets your direction based on myDir.  If you are trying to go to a place that you can't reach, you move randomly.   *
+         * Otherwise you move in the direction set by your code.  Feel free to change this code if you want.                            */
+        if (myDir === "none") {
+            console.log("Going Random!");
+            var rand = Math.floor(Math.random() * 4);
+            var dirs = ["north", "south", "east", "west"];
+            bot.goDir = dirs[rand];
+        }
+        else {
+            bot.goDir = myDir;
+        }
+        ///////////* DON'T REMOVE ANTYTHING BELOW THIS LINE *//////////////
+        resolve();
+    };
+}
+bot.runGame();
+</pre>
+        <h3>What My Bot Does</h3>
+        <p>My bot can go to taverns to double drink, claim free mines and also attack the player with the most amount of mines. 
+        In order to go to the tavern, I created an if statement which determines that the bot will go to the tavern when 
+        the health is below 49. This then sets the task to lowHealth leading to another if statement. 
+        The lowHealth if statement brings the bot to the closest tavern. This is done by using a for loop 
+        which determines the x and y coordinates of each tavern on the map. 
+        It then compares each location of the tavern and how close it is to my bots position on the map.</p>
+        <p>The second thing my bot can do is claim free mines. This was also done using an if else statement.
+        If the bots health is above 80 it will claim any free mines available. 
+        The code is very similar to the tavern code, a for loop is used in order to find the position of the closest mine.</p>
+        <p>The third thing my bot is able to do is attack the player with the highest amount of gold. 
+        This was the most challenging thing for me to do. At first when coding this I thought I had 
+        to use math.max to find the highest bot with the highest mines. This was incorrect because 
+        by finding the bot with the highest amount of mines I was not finding the x and y coordinates 
+        of the bots to fight. I programmed my bot starting with an if statement which states if the bots 
+        life is between 70 and 100 the task will be set to attack. This then lead to another if 
+        statement and inside it , it has a for loop which compares the mine counts of all the enemy bots. 
+</p>
+<p>The final thing my bot can do is double drink from the tavern. This means that my bot is able to recieve double
+the health and fill its health bar to 100.In order to get my bot to double drink I had to create an if statement
+at the beginning of the code which determined that after the first 5 turns in the game my bot should not go to the
+tavern and bot.drink = false. However after the first 5 turns bot.drink = true which means it can drink again. 
+</p>
+<h3>What I Learned About AI</h3>
+<p>I thought it was stressful to create my bot. It did not always do what I wanted it to do. 
+The code sometimes got complicated because of the if else tree and I got confused on how to use 
+it sometimes.  Overall I think my opinion has changed a lot about AI because I never knew how complicated it could be. 
+I think AI is really cool and can be really useful in the right situations.</p>
